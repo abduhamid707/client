@@ -103,6 +103,7 @@ const Home = () => {
                               <button className="more">{slide.buttonText}</button>
                             </div>
                           </div>
+                          {/* .. */}
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 ">
                           <div className="right">
