@@ -96,8 +96,8 @@ const Header = () => {
             <NavLink to="/about" activeClassName="active" exact>Loyiha haqida</NavLink>
             <NavLink to="/nmm" activeClassName="active" exact>NMM</NavLink>
             <NavLink to="/news" activeClassName="active" exact>Yangiliklar</NavLink>
-            <NavLink to="/docs" activeClassName="active" exact>Normativ xujjatlar</NavLink>
-            <NavLink to="/materials" activeClassName="active" exact>Material</NavLink>
+            <NavLink to="/documents" activeClassName="active" exact>Normativ xujjatlar</NavLink>
+            <NavLink to="/audio-materials" activeClassName="active" exact>Material</NavLink>
             <NavLink to="/contact" activeClassName="active" exact>Aloqa</NavLink>
           </nav>
           <CustomModal isOpen={isModalOpen} onClose={closeModal}>
@@ -156,7 +156,7 @@ const Header = () => {
                         <NavLink to="/nmm" activeClassName="active" exact onClick={toggleMenu}>NMM</NavLink>
                         <NavLink to="/news" activeClassName="active" exact onClick={toggleMenu}>Yangiliklar</NavLink>
                         <NavLink to="/documents" activeClassName="active" exact onClick={toggleMenu}>Normativ xujjatlar</NavLink>
-                        <NavLink to="/materials" activeClassName="active" exact onClick={toggleMenu}>Material</NavLink>
+                        <NavLink to="/audio-materials" activeClassName="active" exact onClick={toggleMenu}>Material</NavLink>
                         <NavLink to="/contact" activeClassName="active" exact onClick={toggleMenu}>Aloqa</NavLink>
                       </nav>
                     </div>
@@ -176,5 +176,4 @@ const Header = () => {
     </header>
   );
 }
-
 export default Header;

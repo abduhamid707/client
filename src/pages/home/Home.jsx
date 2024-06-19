@@ -126,7 +126,6 @@ const Home = () => {
 
       <section className="section-two">
         <div className="container">
-
           <div className="btns">
             <button>NMM MILLIY RO'YXATI</button>
             <button className="active">
@@ -150,7 +149,7 @@ const Home = () => {
             >
               <SwiperSlide>
                 <div className="about_card">
-                  <img src="https://picsum.photos/300/300" alt="image" />
+                  <img src="https://picsum.photos/300/300"  alt="image" />
                   <div className="right">
                     <div className="top">
                       <h3 className="title">Boysun tumanining madaniy muhiti</h3>

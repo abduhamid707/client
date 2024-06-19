@@ -150,6 +150,7 @@
   display: flex;
   margin-top: 3em;
   justify-content: space-between;
+
 }
 
 .home-page .slider_btns button {
@@ -190,7 +191,7 @@
   transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
-  
+
   width: 100%;
   max-width: 90%; /* Adjust width as needed */
 }
@@ -221,17 +222,16 @@ section.section-two {
   align-items: end;
 }
 section.section-two .btns {
-  gap: 2em;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  width: 90%;
 }
 
 section.section-two .btns button {
-  width: 370px;
+  width: 100%;
+  max-width: 370px;
   height: 51px;
-  padding: 12px 0px 0px 0px;
+  /* padding: 12px 0px 0px 0px; */
   gap: 10px;
   border-radius: 6px 0px 0px 0px;
   border: 1px 0px 0px 0px;
@@ -240,6 +240,7 @@ section.section-two .btns button {
   color: #ffffff;
   border: 1px solid;
   cursor: pointer;
+  font-size: 12px;
 }
 
 section.section-two .btns button:hover {
@@ -263,6 +264,7 @@ section.section-two .btns button.active {
   justify-content: space-between;
   /* align-items: center; */
   /* padding: 20px; */
+  /* ga */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   color: #fff;
@@ -272,6 +274,7 @@ section.section-two .btns button.active {
   display: flex;
   /* flex-direction: row; */
   justify-content: space-between;
+  margin-left: 20px;
 }
 
 .about_card img {
