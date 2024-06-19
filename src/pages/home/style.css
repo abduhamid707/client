@@ -195,7 +195,8 @@
   max-width: 90%; /* Adjust width as needed */
 }
 section.section-two {
-  padding: 2em;
+  /* padding: 2em; */
+  padding-top: 50px;
 }
 .custom-button {
   width: 81px;
@@ -252,9 +253,9 @@ section.section-two .btns button.active {
 }
 .about_card_wrapper {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 100px;
 }
 
 .about_card {
@@ -273,14 +274,16 @@ section.section-two .btns button.active {
   display: flex;
   /* flex-direction: row; */
   justify-content: space-between;
-  margin-left: 20px;
+  /* margin-left: 50px; */
 }
 
 .about_card img {
   border-radius: 10px;
-  margin-right: 20px;
+  margin-right: 70px;
   width: 100%;
   height: 100%;
+  max-width: 380px;
+  max-height: 380px;
 }
 .about_card p {
   margin-top: 20px;
@@ -526,7 +529,7 @@ section.section-three .contents .right .bottom_btn:hover {
 }
 
 section.section-four {
-  padding: 50px 0;
+  padding: 50px 0 0 0;
 }
 
 section.section-four .top {
@@ -605,7 +608,9 @@ section.section-four .news .new-card .top .left img {
   border-radius: 6px 0px 0px 0px;
   opacity: 0px;
 }
-
+section.section-four .news .new-card .top .right {
+  margin-left: 20px;
+}
 section.section-four .news .new-card .top .right .head {
   display: flex;
   justify-content: space-between;
@@ -613,7 +618,7 @@ section.section-four .news .new-card .top .right .head {
 
 section.section-four .news .new-card .top .right .head .media {
   font-family: Bebas Neue;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.04em;
@@ -624,7 +629,7 @@ section.section-four .news .new-card .top .right .head .media {
 section.section-four .news .new-card .top .right .head .date {
   color: #96999f;
   font-family: Roboto Condensed;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.04em;
@@ -633,7 +638,7 @@ section.section-four .news .new-card .top .right .head .date {
 
 section.section-four .news .new-card .top .right .text {
   font-family: Bebas Neue;
-  font-size: 19px;
+  font-size: 16px;
   margin-top: 0.7em;
   font-weight: 400;
   line-height: 25px;
@@ -670,7 +675,7 @@ section.section-four .news .new-card .bottom_btn:hover {
 }
 
 section.section-five {
-  padding: 4em 5em;
+  /* padding: 4em 5em; */
   margin-top: 6.5em;
 }
 

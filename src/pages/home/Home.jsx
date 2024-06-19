@@ -78,16 +78,16 @@ const Home = () => {
         <div className="gradient-overlay"></div>
         <div className="container">
           <Swiper
-               spaceBetween={50}
-               slidesPerView={'auto'}
-               centeredSlides={false}
-               slidesOffsetBefore={0}
-               autoplay={{ delay: 3000 }}
-               pagination={{ clickable: true }}
-               navigation={false}
-               modules={[Autoplay, Navigation]}
-               onSlideChange={handleSlideChange}
-               ref={swiperRef}
+            spaceBetween={50}
+            slidesPerView={'auto'}
+            centeredSlides={false}
+            slidesOffsetBefore={0}
+            autoplay={{ delay: 3000 }}
+            pagination={{ clickable: true }}
+            navigation={false}
+            modules={[Autoplay, Navigation]}
+            onSlideChange={handleSlideChange}
+            ref={swiperRef}
           >
             {
               slidesData.map((slide, index) => (
@@ -149,7 +149,7 @@ const Home = () => {
             >
               <SwiperSlide>
                 <div className="about_card">
-                  <img src="https://picsum.photos/300/300"  alt="image" />
+                  <img src="https://picsum.photos/300/300" alt="image" />
                   <div className="right">
                     <div className="top">
                       <h3 className="title">Boysun tumanining madaniy muhiti</h3>
