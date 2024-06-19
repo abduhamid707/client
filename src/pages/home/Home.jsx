@@ -127,7 +127,7 @@ const Home = () => {
       <section className="section-two">
         <div className="container">
           <div className="btns">
-            <button>NMM MILLIY RO'YXATI</button>
+            <button>NMM MILLIY RO'YXATI </button>
             <button className="active">
               YUNESKONING REPREZENTATIV OB'EKTLARI
             </button>
