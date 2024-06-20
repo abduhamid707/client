@@ -16,19 +16,19 @@ import Nmm from '../pages/nnm/Nmm'
 const Router = () => {
   return (
     <Routes>
-      <Route path='/' element={<Layout/>}>
-      <Route index  element={<Home/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='/documents' element={<DocsPage/>}/>
-      <Route path='/news' element={<News/>}/>
-      <Route path='/nmm' element={<Nmm/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-      <Route path='/photo-gallery' element={<PhotoGallery/>}/>
-      <Route path='/video-gallery' element={<VideoGallery/>}/>
-      <Route path='/audio-materials' element={<AudioMaterials/>}/>
-      <Route path='*' element={<NotFound/>}/>
+      <Route path='/' element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/documents' element={<DocsPage />} />
+        <Route path='/news' element={<News />} />
+        <Route path='/nmm' element={<Nmm />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/photo-gallery' element={<PhotoGallery />} />
+        <Route path='/video-gallery' element={<VideoGallery />} />
+        <Route path='/audio-materials' element={<AudioMaterials />} />
+        <Route path='*' element={<NotFound />} />
       </Route>
-      <Route path='/search' element={<SearchPage/>}/>
+      <Route path='/search' element={<SearchPage />} />
     </Routes>
   )
 }
