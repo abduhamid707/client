@@ -1198,7 +1198,9 @@ section.section-eight .vds_wrp .vd .watch_btn {
   color: #ffffff;
   border: 1px solid #fff;
 }
-section.section-eight .vds_wrp .vd .watch_btn p{
+section.section-eight .vds_wrp .vd .watch_btn a {
+  color: white;
+  text-decoration: none;
   margin: 0 !important;
 }
 section.section-eight .vds_wrp .vd .watch_btn:hover {

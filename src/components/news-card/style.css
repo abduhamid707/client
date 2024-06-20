@@ -1,6 +1,6 @@
 .new_card {
   display: flex;
-  gap: 2.5em;
+  gap: 2em;
 }
 
 .new_card .right {
@@ -10,6 +10,10 @@
 }
 .new_card .left img {
   border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  max-width: 661px;
+  max-height: 460px;
 }
 .new_card .right .top {
   display: flex;

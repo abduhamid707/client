@@ -28,37 +28,79 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import HomeNewsCard from "../../components/HomeNewsCard/HomeNewsCard";
+import axios from "axios";
+import VideoCardGal from "../../components/VideoCard/VideoCardGal";
 const Home = () => {
-  const slidesData = [
-    {
-      img: HomeIMg, // replace with the correct path to the image
-      title: "TV channels and movies wherever there is internet!",
-      description: "Eng yaxshi madaniy meroslar",
-      buttonText: "Batafsil",
-    }, {
-      img: HomeIMg, // replace with the correct path to the image
-      title: "TV channels and movies wherever there is internet!",
-      description: "Eng yaxshi madaniy meroslar",
-      buttonText: "Batafsil ",
-    },
-    {
-      img: HomeIMg, // replace with the correct path to the image
-      title: "TV channels and movies wherever there is internet!",
-      description: "Eng yaxshi madaniy meroslar",
-      buttonText: "Batafsil",
-    }, {
-      img: HomeIMg, // replace with the correct path to the image
-      title: "TV channels and movies wherever there is internet!",
-      description: "Eng yaxshi madaniy meroslar",
-      buttonText: "Batafsil",
-    },
-    // Add more slide data here
-  ];
-  const [currentBackground, setCurrentBackground] = useState(slidesData[0].img);
+  const [slidesData, setSlidesData] = useState([]);
+  const [videosData, setVideosData] = useState([]);
+  const [currentBackground, setCurrentBackground] = useState(null);
   const swiperRef = useRef(null);
+  const fetchSliderData = async () => {
+    try {
+      const response = await axios.get('http://ichlinks.uz/api/site/sliders');
+      const data = response.data;
+      if (data.success && data.result.rows.length > 0) {
+        const formattedData = data.result.rows.map(row => ({
+          img: HomeIMg,
+          title: row.title_uz || row.title_ru || row.title_en,
+          description: row.text_uz || row.text_ru || row.text_en,
+          buttonText: "Batafsil", // Customize as needed
+        }));
+        setSlidesData(formattedData);
+        setCurrentBackground(formattedData[0].img); // Set initial background image
+      } else {
+        throw new Error('No slider data found');
+      }
+    } catch (error) {
+      console.error('Error fetching slider data:', error);
+    }
+  };
+  const fetchVideosData = async () => {
+    try {
+      const response = await axios.get('http://ichlinks.uz/api/site/videos');
+      const data = response.data;
+      if (data.success && data.result.videos.rows.length > 0) {
+        setVideosData(data.result.videos.rows);
+      } else {
+        throw new Error('No slider data found');
+      }
+    } catch (error) {
+      console.error('Error fetching slider data:', error);
+    }
+  };
+  useEffect(() => {
+    fetchSliderData(); // Fetch slider data when component mounts
+    fetchVideosData();
+  }, []);
 
+  // const slidesData = [
+  //   {
+  //     img: HomeIMg, // replace with the correct path to the image
+  //     title: "TV channels and movies wherever there is internet!",
+  //     description: "Eng yaxshi madaniy meroslar",
+  //     buttonText: "Batafsil",
+  //   }, {
+  //     img: HomeIMg, // replace with the correct path to the image
+  //     title: "TV channels and movies wherever there is internet!",
+  //     description: "Eng yaxshi madaniy meroslar",
+  //     buttonText: "Batafsil",
+  //   },
+  //   {
+  //     img: HomeIMg, // replace with the correct path to the image
+  //     title: "TV channels and movies wherever there is internet!",
+  //     description: "Eng yaxshi madaniy meroslar",
+  //     buttonText: "Batafsil",
+  //   }, {
+  //     img: HomeIMg, // replace with the correct path to the image
+  //     title: "TV channels and movies wherever there is internet!",
+  //     description: "Eng yaxshi madaniy meroslar",
+  //     buttonText: "Batafsil",
+  //   },
+  //   // Add more slide data here
+  // ];
   const handleSlideChange = (swiper) => {
-    setCurrentBackground(slidesData[swiper.activeIndex].img);
+    const { activeIndex } = swiper; // Get the active slide index
+    setCurrentBackground(slidesData[activeIndex]?.img);
   };
   const handlePrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -97,8 +139,8 @@ const Home = () => {
                       <div className="row">
                         <div className="col-lg-6 col-md-6 col-sm-12">
                           <div className="left">
-                            <p>{slide.description}</p>
-                            <h2>{slide.title}</h2>
+                            <p>Eng yaxshi madaniy meroslar </p>
+                            <h2>{slide.title} Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
                             <div className="buttons">
                               <button className="more">{slide.buttonText}</button>
                             </div>
@@ -468,153 +510,11 @@ const Home = () => {
             </div>
           </div>
           <div className="vds_wrp">
-            <div className="vd">
-              <img src="https://picsum.photos/id/315/240/260" />
-              <div className="body">
-                <div className="top">
-                  <p className="media">MEDIA</p>
-                  <p className="date">August 10, 2023</p>
-                </div>
-                <h3 className="title_txt">
-                  BEST BASKETBALL NEWS <br /> IN OUR WEEKLY SPORTS <br /> DIGEST
-                </h3>
-                <ul className="details">
-                  <li>
-                    <FaCalendar />
-                    20 июля 2023
-                  </li>
-                  <li>
-                    <FaGlobe />
-                    Ташкент
-                  </li>
-                  <li>
-                    <FaEye />
-                    3325
-                  </li>
-                </ul>
-                <button className="watch_btn">
-                  <FaPlay />
-                  <p className="mb-0">KO'RISH</p>
-                </button>
-              </div>
-            </div>
-            <div className="vd">
-              <img src="https://picsum.photos/id/315/240/260" />
-              <div className="body">
-                <div className="top">
-                  <p className="media">MEDIA</p>
-                  <p className="date">August 10, 2023</p>
-                </div>
-                <h3 className="title_txt">
-                  BEST BASKETBALL NEWS <br /> IN OUR WEEKLY SPORTS <br /> DIGEST
-                </h3>
-                <ul className="details">
-                  <li>
-                    <FaCalendar />
-                    20 июля 2023
-                  </li>
-                  <li>
-                    <FaGlobe />
-                    Ташкент
-                  </li>
-                  <li>
-                    <FaEye />
-                    3325
-                  </li>
-                </ul>
-                <button className="watch_btn">
-                  <FaPlay />
-                  <p>KO'RISH</p>
-                </button>
-              </div>
-            </div>  <div className="vd">
-              <img src="https://picsum.photos/id/315/240/260" />
-              <div className="body">
-                <div className="top">
-                  <p className="media">MEDIA</p>
-                  <p className="date">August 10, 2023</p>
-                </div>
-                <h3 className="title_txt">
-                  BEST BASKETBALL NEWS <br /> IN OUR WEEKLY SPORTS <br /> DIGEST
-                </h3>
-                <ul className="details">
-                  <li>
-                    <FaCalendar />
-                    20 июля 2023
-                  </li>
-                  <li>
-                    <FaGlobe />
-                    Ташкент
-                  </li>
-                  <li>
-                    <FaEye />
-                    3325
-                  </li>
-                </ul>
-                <button className="watch_btn">
-                  <FaPlay />
-                  <p>KO'RISH</p>
-                </button>
-              </div>
-            </div>  <div className="vd">
-              <img src="https://picsum.photos/id/315/240/260" />
-              <div className="body">
-                <div className="top">
-                  <p className="media">MEDIA</p>
-                  <p className="date">August 10, 2023</p>
-                </div>
-                <h3 className="title_txt">
-                  BEST BASKETBALL NEWS <br /> IN OUR WEEKLY SPORTS <br /> DIGEST
-                </h3>
-                <ul className="details">
-                  <li>
-                    <FaCalendar />
-                    20 июля 2023
-                  </li>
-                  <li>
-                    <FaGlobe />
-                    Ташкент
-                  </li>
-                  <li>
-                    <FaEye />
-                    3325
-                  </li>
-                </ul>
-                <button className="watch_btn">
-                  <FaPlay />
-                  <p>KO'RISH</p>
-                </button>
-              </div>
-            </div>  <div className="vd">
-              <img src="https://picsum.photos/id/315/240/260" />
-              <div className="body">
-                <div className="top">
-                  <p className="media">MEDIA</p>
-                  <p className="date">August 10, 2023</p>
-                </div>
-                <h3 className="title_txt">
-                  BEST BASKETBALL NEWS <br /> IN OUR WEEKLY SPORTS <br /> DIGEST
-                </h3>
-                <ul className="details">
-                  <li>
-                    <FaCalendar />
-                    20 июля 2023
-                  </li>
-                  <li>
-                    <FaGlobe />
-                    Ташкент
-                  </li>
-                  <li>
-                    <FaEye />
-                    3325
-                  </li>
-                </ul>
-                <button className="watch_btn">
-                  <FaPlay />
-                  <p>KO'RISH</p>
-                </button>
-              </div>
-            </div>
+
+            {videosData.slice(0,4).map((video, index) => (
+              <VideoCardGal key={index} video={video} />
+            ))}
+
           </div>
         </div>
 

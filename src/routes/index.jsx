@@ -11,6 +11,7 @@ import PhotoGallery from '../pages/photo-gallery/PhotoGallery'
 import VideoGallery from '../pages/video-gallery/VideoGallery'
 import AudioMaterials from '../pages/audio-materials/AudioMaterials'
 import SearchPage from '../pages/search-page/SearchPage'
+import Nmm from '../pages/nnm/Nmm'
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
       <Route path='/about' element={<About/>}/>
       <Route path='/documents' element={<DocsPage/>}/>
       <Route path='/news' element={<News/>}/>
+      <Route path='/nmm' element={<Nmm/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/photo-gallery' element={<PhotoGallery/>}/>
       <Route path='/video-gallery' element={<VideoGallery/>}/>

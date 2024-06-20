@@ -5,7 +5,7 @@ import { FaChevronLeft, FaChevronRight, FaHome } from 'react-icons/fa';
 import NewsCard from '../../components/news-card/NewsCard';
 import currentBackground from "../../assets/icons/news-page.png";
 
-const News = () => {
+const Nmm = () => {
   const [newsList, setNewsList] = useState([]);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const News = () => {
         <div className='overlay'>
           <div className='container'>
             <div className='left'>
-              <h2>YANGILIKLAR</h2>
+              <h2>NMM</h2>
             </div>
             <div className='right'>
               <Links />
@@ -75,4 +75,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Nmm;
