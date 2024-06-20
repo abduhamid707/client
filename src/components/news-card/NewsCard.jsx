@@ -1,33 +1,25 @@
 import React from "react";
-import { FaCalendar } from "react-icons/fa";
-import { FaShare } from "react-icons/fa";
+import { FaCalendar, FaShare } from "react-icons/fa";
 import "./style.css";
 
-const NewsCard = () => {
+const NewsCard = ({ news }) => {
   return (
     <div className="new_card">
       <div className="left">
-        <img src="https://picsum.photos/570/400" />
+        {/* <img src={news.main_img} alt={news.title_uz} /> */}
       </div>
       <div className="right">
         <div className="top">
-          <h3 className="heading">Navroʼz bayramiga bagʼishlangan koʼrgazma</h3>
-          <p className="desc">
-            Toshkent Fotosuratlar uyida Navroʼz bayramiga bagʼishlangan
-            koʼrgazma ochildi. Koʼrgazmadan Аbdugʼani Jumaev, Vladimir
-            Shlosberg, Rustam Sharipov, Rustam Shagaev, Vladimir Goncharenko,
-            Sultonboy Dexkanov, Xusniddin Аtoev kabi taniqli fotoustalar,
-            shuningdek, Liliya Аxsanova, Gayana Аvanesyan, Yevgeniy Ten kabi
-            havaskorlarning ijodiy ishlari oʼrin olgan.
-          </p>
+          <h3 className="heading">{news.title_uz}</h3>
+          <p className="desc">{news.text_uz}</p>
         </div>
         <div className="bottom">
           <ul className="left">
             <li>
-              <FaCalendar /> 22 июнь 2022г
+              <FaCalendar /> {new Date(news.createdAt).toLocaleDateString()}
             </li>
             <li>
-              <FaShare /> Поделитсья
+              <FaShare /> Поделиться
             </li>
           </ul>
           <div className="right">

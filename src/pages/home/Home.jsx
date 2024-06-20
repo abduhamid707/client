@@ -32,23 +32,23 @@ const Home = () => {
   const slidesData = [
     {
       img: HomeIMg, // replace with the correct path to the image
-      title: "TV channels and movies wherever there is internet!+1",
+      title: "TV channels and movies wherever there is internet!",
       description: "Eng yaxshi madaniy meroslar",
       buttonText: "Batafsil",
     }, {
       img: HomeIMg, // replace with the correct path to the image
-      title: "TV channels and movies wherever there is internet!+2",
+      title: "TV channels and movies wherever there is internet!",
       description: "Eng yaxshi madaniy meroslar",
-      buttonText: "Batafsil",
+      buttonText: "Batafsil ",
     },
     {
       img: HomeIMg, // replace with the correct path to the image
-      title: "TV channels and movies wherever there is internet!+3",
+      title: "TV channels and movies wherever there is internet!",
       description: "Eng yaxshi madaniy meroslar",
       buttonText: "Batafsil",
     }, {
       img: HomeIMg, // replace with the correct path to the image
-      title: "TV channels and movies wherever there is internet!+4",
+      title: "TV channels and movies wherever there is internet!",
       description: "Eng yaxshi madaniy meroslar",
       buttonText: "Batafsil",
     },
@@ -494,7 +494,7 @@ const Home = () => {
                 </ul>
                 <button className="watch_btn">
                   <FaPlay />
-                  <p>KO'RISH</p>
+                  <p className="mb-0">KO'RISH</p>
                 </button>
               </div>
             </div>

@@ -1,19 +1,34 @@
-import React from 'react'
-import './style.css'
-import NewsPageImg from '../../assets/icons/news-page.png'
-import Links from '../../components/links/Links'
-import { FaCalendar } from 'react-icons/fa'
-import { FaShare } from 'react-icons/fa'
-import { FaChevronLeft } from 'react-icons/fa'
-import { FaChevronRight } from 'react-icons/fa'
-import { FaHome } from 'react-icons/fa'
-import NewsCard from '../../components/news-card/NewsCard'
-
+import React, { useState, useEffect } from 'react';
+import './style.css';
+import Links from '../../components/links/Links';
+import { FaChevronLeft, FaChevronRight, FaHome } from 'react-icons/fa';
+import NewsCard from '../../components/news-card/NewsCard';
+import currentBackground from "../../assets/icons/news-page.png";
 
 const News = () => {
+  const [newsList, setNewsList] = useState([]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch('http://ichlinks.uz/api/site/news');
+        if (response.ok) {
+          const data = await response.json();
+          setNewsList(data.result); // Assuming data.result contains the array of news items
+        } else {
+          console.error('Failed to fetch news');
+        }
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      }
+    };
+
+    fetchNews();
+  }, []); // Empty dependency array ensures useEffect runs once on component mount
+
   return (
     <div className='page news-page'>
-      <section className='section_one'>
+      <section className='section_one' style={{ backgroundImage: `url(${currentBackground})` }}>
         <div className='overlay'>
           <div className='container'>
             <div className='left'>
@@ -27,18 +42,11 @@ const News = () => {
       </section>
       <section className='section_two'>
         <div className='container'>
-          <h3 className='title'>NASHRLAR SONI: 1694</h3>
+          <h3 className='title'>NASHRLAR SONI: {newsList.length}</h3>
           <div className='news_wrp'>
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
+            {newsList.map(news => (
+              <NewsCard key={news.news_id} news={news} />
+            ))}
           </div>
           <div className='pagination_btns'>
             <div className='left_btns'>
@@ -64,7 +72,7 @@ const News = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default News
+export default News;
